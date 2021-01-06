@@ -38,10 +38,10 @@ function fetchData() {
     })
     .then(data => {
         // console.log(data);
-        const q = data.data.question;
+        const q = data.data.question.replace(/</g, "&lt;").replace(/>/g, "&gt;");;
         const o = data.data.options;
         a = data.data.answer;
-        // console.log(o);
+        // console.log(p);
         document.getElementById('question').innerHTML = q;
         for (opt in o) {
             // console.log(o[opt]);
